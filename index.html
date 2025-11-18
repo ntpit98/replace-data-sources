@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Batch Replace Data Source</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-card">
+        <h2>Batch Replace Data Source</h2>
+        <p class="helper">✨✨ MotionBoard ✨✨</p>
+
+        <div class="box">
+            <form id="replaceForm" enctype="multipart/form-data" method="post"
+                action="http://localhost:8787/motionboard/rest/datasource/replace?tenant=system" accept-charset="UTF-8"
+                target="_blank">
+                <div>
+                    <label for="serverUrl">Server URL</label>
+                    <input id="serverUrl" type="text" value="http://localhost:8787" />
+                </div>
+
+                <div class="hidden">
+                    <label for="userId">User ID</label>
+                    <input id="userId" type="text" name="id" value="admin" />
+                </div>
+
+                <div class="hidden">
+                    <label for="password">Password</label>
+                    <input id="password" type="password" name="pw" value="admin" />
+                </div>
+
+                <div>
+                    <label for="jsonUpload">Upload JSON file</label>
+                    <input id="jsonUpload" type="file" name="uploadFile" />
+                </div>
+
+                <div class="hidden">
+                    <label>Dry run (Test thử)</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="dryrun" value="false" checked />
+                            <strong>Yes (Dry run)</strong>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="dryrun" value="true" />
+                            <strong>No (Chạy thật)</strong>
+                        </label>
+                    </div>
+                </div>
+
+                <div>
+                    <label for="depth">Depth</label>
+                    <input id="depth" type="text" name="depth" value="-1" />
+                </div>
+
+                <button class="submit-btn" type="submit">Replace Data Sources</button>
+            </form>
+
+            <form>
+                <div>
+                    <label for="path">Path Of Board</label>
+                    <input id="path" type="text" name="path" value="exex" />
+                </div>
+
+                <div>
+                    <label for="from">Replace From</label>
+                    <input id="from" type="text" name="from" value="exex" />
+                </div>
+
+                <div>
+                    <label for="to">Replace To</label>
+                    <input id="to" type="text" name="to" value="thanh-phongn" />
+                </div>
+
+                <button class="submit-btn" type="button" id="downloadJsonBtn">Create & Download JSON</button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

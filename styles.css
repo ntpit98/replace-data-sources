@@ -1,0 +1,149 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --accent: #f97316;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --bg: #f1f5f9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: radial-gradient(circle at top, rgba(37, 99, 235, 0.22), rgba(15, 23, 42, 0.08)), var(--bg);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+    color: var(--text);
+}
+
+.app-card {
+    width: min(650px, 100%);
+    min-width: 650px;
+    background: #fff;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.15);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+}
+
+h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    letter-spacing: 0.02em;
+    color: var(--primary-dark);
+}
+
+.hidden {
+    display: none;
+}
+
+p.helper {
+    text-align: center;
+    margin: 6px 0 24px;
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.box {
+    display: flex;
+    gap: 16px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    border: 1px dashed var(--border);
+    border-radius: 20px;
+    flex: 1;
+}
+
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    outline: none;
+}
+
+.radio-group {
+    display: grid;
+    gap: 10px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px dashed var(--border);
+    border-radius: 12px;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.radio-option input[type="radio"] {
+    accent-color: var(--primary);
+}
+
+.radio-option strong {
+    color: var(--text);
+}
+
+input[type="radio"]:checked+strong {
+    color: var(--primary);
+}
+
+.radio-option:has(input[type="radio"]:checked) {
+    border-color: var(--primary);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.submit-btn {
+    padding: 14px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: #fff;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
